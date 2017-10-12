@@ -63,12 +63,14 @@ int digits_check(double v,float y_0,int k){ //calculates how many decimals a num
 
 
 int main(){
-    bool input_OK = true;
+    bool calculate = true, input_OK = true;
     int distance;
     float y_0;
     double v,theta;
     printf("This program calculates the horizontal distance travelled by a projectile.\n\n");
     printf("Please provide the initial speed and height and the launch angle of the projectile.\n\n");
+
+    while(calculate==true){
 
     do {            //check for wrong inputs and give advise on the formatting
         input_OK = true;
@@ -127,7 +129,29 @@ int main(){
     printf("\n\nFor a sensitivity check you can take a look at the tables below.\n\n");
 
     print_table(v,theta,y_0,nDigits_list);
+    printf("\n\n");
 
+    printf("Press 1 to start a new trajectory calculation and press 2 to quit.\n");
+    bool end = false;
+    while(end == false){
+        int input_sw;
+        fflush(stdin);
+        scanf("%d",&input_sw);
+        switch(input_sw){
+            case 1:
+                system("cls");
+                end = true;
+                break;
+            case 2:
+                end = true;
+                calculate = false;
+                break;
+            default:
+                printf("Wrong input, try again.\n");
+        }
+    }
+
+    }
     return(0);
 
 }
