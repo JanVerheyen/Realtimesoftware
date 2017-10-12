@@ -38,7 +38,7 @@ int main(){
         printf("Initial speed [m/s]: ");
         fflush(stdin);
         if(scanf("%lf",&v) != 1) {
-            printf("Input not a number!\n");
+            printf("Input is not a number!\n");
             input_OK = false;
         };
         if(v <= 0) {
@@ -55,7 +55,7 @@ int main(){
         printf("Initial height [m]: ");
         fflush(stdin);
         if(scanf("%f",&y_0) != 1) {
-            printf("Input not a number!\n");
+            printf("Input is not a number!\n");
             input_OK = false;
         }
         if(y_0 < 0) {
@@ -69,7 +69,7 @@ int main(){
         printf("Launch angle [degrees]: ");
         fflush(stdin);
         if(scanf("%lf",&theta) != 1) {
-            printf("Input not a number!\n");
+            printf("Input is not a number!\n");
             input_OK = false;
         };
         if(theta >= 90 || theta <= 0) {
