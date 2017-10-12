@@ -12,6 +12,15 @@
   \_/_|  \__,_| |\___|\___|\__\___/|_|   \__, |  \___\__,_|_|\___|\__,_|_|\__,_|\__\___/|_|
              _/ |                         __/ |
             |__/                         |___/
+
+Programmers:
+            -De Leeuw Benyamin
+            -Dupon Fréderic
+            -Gossye Midas
+            -Verheyen Jan
+
+Last mod. date: 12/10/2017
+
 */
 
 float g=9.81,pi=3.141592653589793238462643383279;  //define some general constants used in computation
@@ -21,7 +30,7 @@ long c_light = 299792458;                          //
 float root(double v,double theta,float y_0){
     int d;
     theta = theta/180*pi;       //convert to radians
-    d = pow(v,2)/(2*g)*(1+sqrt(1+(2*g*y_0)/(pow(v,2)*pow(sin(2*theta),2))))*sin(2*theta);
+    d = pow(v,2)/(2*g)*(1+sqrt(1+(2*g*y_0)/(pow(v,2)*pow(sin(2*theta),2))))*sin(2*theta); // Trajectory distance formula
     return(d);
 }
 
@@ -133,6 +142,7 @@ int main(){
 
     printf("Press 1 to start a new trajectory calculation and press 2 to quit.\n");
     bool end = false;
+    //The loop below checks if the user wants to calculate again with other values, or quit the program
     while(end == false){
         int input_sw;
         fflush(stdin);
