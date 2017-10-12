@@ -37,7 +37,10 @@ int main(){
         input_OK = true;
         printf("Initial speed [m/s]: ");
         fflush(stdin);
-        scanf("%lf",&v);
+        if(scanf("%lf",&v) != 1) {
+            printf("Input not a number!\n");
+            input_OK = false;
+        };
         if(v <= 0) {
             printf("Negative values are not accepted!\n");
             input_OK = false;
@@ -51,7 +54,10 @@ int main(){
         input_OK = true;
         printf("Initial height [m]: ");
         fflush(stdin);
-        scanf("%f",&y_0);
+        if(scanf("%f",&y_0) != 1) {
+            printf("Input not a number!\n");
+            input_OK = false;
+        }
         if(y_0 < 0) {
             printf("Only positive values are allowed!\n");
             input_OK = false;
@@ -62,7 +68,10 @@ int main(){
         input_OK = true;
         printf("Launch angle [degrees]: ");
         fflush(stdin);
-        scanf("%lf",&theta);
+        if(scanf("%lf",&theta) != 1) {
+            printf("Input not a number!\n");
+            input_OK = false;
+        };
         if(theta >= 90 || theta <= 0) {
             printf("Pick a value in between 0 and 90 degrees!\n");
             input_OK = false ;
